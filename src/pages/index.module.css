@@ -3,21 +3,99 @@
  * and scoped locally.
  */
 
-.heroBanner {
+ .heroBanner {
   padding: 4rem 0;
-  text-align: center;
+  text-align: left;
+  padding-left: 2rem;
   position: relative;
   overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.3); /* 半透明背景 */
+  color: white;
+}
+
+/* 添加背景图片的伪元素 */
+.heroBanner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('/img/my-background.jpg');
+  background-size: cover;
+  background-position: center 60%;;
+  opacity: 0.8; /* 背景图片透明度 */
+  z-index: -1; /* 图片在文字后面 */
+}
+
+.introSection {
+  width: 60%;
+  margin-right: auto;
+}
+
+.title {
+  font-size: 3.5rem;
+  margin-bottom: 2rem;
+}
+
+.subtitle {
+  font-size: 1.4rem;
+  line-height: 1.6;
+}
+
+.features {
+  padding: 4rem 0;
+  background-color: var(--ifm-background-color);
+}
+
+.featureCard {
+  padding: 2rem;
+  height: 100%;
+  border-radius: 8px;
+  background-color: var(--ifm-background-surface-color);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+.featureCard h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--ifm-color-primary);
+}
+
+.educationItem {
+  margin-bottom: 2rem;
+}
+
+.educationItem h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.educationItem p {
+  font-size: 1.1rem;
+  color: var(--ifm-color-emphasis-700);
 }
 
 @media screen and (max-width: 996px) {
   .heroBanner {
     padding: 2rem;
   }
+
+  .introSection {
+    width: 100%;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+  }
 }
 
 .buttons {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: left;
 }
